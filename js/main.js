@@ -26,40 +26,58 @@ const menu = document.querySelector(".menu");
 }
 
 
-let collections = [
+let ropa = [
     {
         id: '0',
         Name: 'Hoodies',
-        Price: 14,
-        Stock:10,
-        urlImage: "./assets/images/featured1.png"
+        price: 14,
+        stock:10,
+        clasfilter:"white",
+        img: "./assets/images/featured1.png",
 
     },
     {
         id: '1',
-        Name: 'Shirts',
-        Price: 24,
-        Stock: 15,
-        urlImage: "./assets/images/featured2.png"
+        name: 'Shirts',
+        price: 24,
+        stock: 15,
+        clasfilter:"black",
+        img: "./assets/images/featured2.png",
 
     },
     {
         id: '2',
-        Name: 'Sweatshirts',
-        Price: 14,
-        Stock: 20,
-        urlImage: "./assets/images/featured3.png"
+        name: 'Sweatshirts',
+        price: 14,
+        stock: 20,
+        clasfilter:"red",
+        img: "./assets/images/featured3.png",
 
     },
 ];
 
-const products = document.querySelector(".products");
-
-function printProducts(){
-    let html = 'hola q mas';
 
 
 
+const ecomerceProducts = document.querySelector(".ecomerce__products");
 
-} 
+let html = ''
 
+ropa.forEach(callbackfn: Function, thisArg?: any)
+
+for (let i = 0; i < 100; i++){
+    html +=  `<div class="product red">
+                        <div class="product__img">   
+                            <img src="./assets/img/featured1.png" alt="buzo 1"> 
+                        </div>
+                        <div class="product__info">
+                            <div class="add__cart">
+                                <span>+</span>
+                            </div>
+                            <p>$14.00 <small>| Stock:10</small></p>
+                            <p>Buzo Rojo</p>
+                        </div>
+                    </div>`;
+        };
+
+ecomerceProducts.innerHTML = html;
