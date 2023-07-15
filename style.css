@@ -277,6 +277,7 @@ footer p {
   flex-direction: column;
   padding: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, -0, -0, -0.15);
+  width: 253px;
 
 }
 
@@ -306,6 +307,9 @@ footer p {
 
 .product__info {
   background-color: #fff2f2;
+  padding-left: 11px;
+  padding-right: 21px;
+  padding-bottom: 7px;
 }
 
 
