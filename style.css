@@ -312,6 +312,17 @@ footer p {
   padding-bottom: 7px;
 }
 
+.btn__by {
+  gap: 20px;
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.btn__by h3 {
+  text-align: center;
+  font-size: 30px;
+
+}
 
 @media screen and (min-width: 700px) {
   .home {

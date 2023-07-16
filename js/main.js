@@ -69,13 +69,26 @@ const carTotal = document.querySelector(".carTotal");
 let objCart = {};
 
 function printTotalCart() {
-    const arrayCart = objCart.values(objCart);
+    const arrayCart = Object.values(objCart);
 
     if (!arrayCart.length) {
         carTotal.innerHTML = `
-                <h3>No hay nada, a comprar</h3>
-                `;
+        <h3>There is nothing, selected </h3>
+        `;
+
+        return
     }
+
+    let sum = 0
+
+    arrayCart.forEach(function ({ amount, price }) {
+        sum += amount * price;
+    });
+
+    carTotal.innerHTML = `
+        <h3>Total ${sum} </h3>
+        <button class="btn btn__by">Buy</button>
+        `;
 }
 
 function printProductsInCart() {
@@ -119,7 +132,7 @@ function printProducts() {
                     </div>
                     <div class="product__info" id="${id}"> 
                         <div class="add__cart">
-                            <span class="add___cart">+</span>
+                            <span>+</span>
                         </div>
                         <p>${price}.00 <small>| Stock:${stock}</small></p>
                         <p>${name}</p>
@@ -154,6 +167,7 @@ ecomerceProducts.addEventListener("click", function (e) {
     };
 
     printProductsInCart();
+    printTotalCart();
 });
 
 // funcion para botones añadir y eliminar
@@ -195,6 +209,8 @@ carProducts.addEventListener("click", function (e) {
     };
 
     printProductsInCart()
+    printTotalCart();
 });
 
 printProducts();
+printTotalCart();
